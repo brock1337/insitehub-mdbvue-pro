@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
+// Custom Pages
+import SignupPage from '../pages/SignupPage';
+import LoginPage from '../pages/LoginPage';
+
 // PAGES
 import CSSPage from '../docs/CSSPage';
 import ComponentsPage from '../docs/ComponentsPage';
@@ -67,7 +71,17 @@ export default new Router({
       name: 'Home',
       component: HomePage
     },
-
+    // CUSTOM PAGES
+    {
+      path: '/signup',
+      name: 'Signup',
+      component: SignupPage
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: LoginPage
+    },
     // PAGES
     {
       path: '/css',
