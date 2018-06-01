@@ -14,8 +14,8 @@
           </view-wrapper>
           
           <card-body>
-            <md-input icon-left icon="envelope" v-model="email" type="email" label="Enter your email" />
-            <md-input icon-left icon="lock" v-model="pwd" type="password" label="Enter your password" />
+            <input icon-left icon="envelope" v-model="email" type="email" label="Enter your email" />
+            <input icon-left icon="lock" v-model="pwd" type="password" label="Enter your password" />
             
             <card-title>
               <btn @click.native="signup" icon-left icon="sign-in" gradient="peach" rounded>
@@ -104,7 +104,7 @@
         
         console.log(credentials);
         
-        // this.$store.dispatch('signup', credentials);
+        this.$store.dispatch('signup', credentials);
       }
     }
   };

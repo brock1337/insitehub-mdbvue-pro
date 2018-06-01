@@ -13,8 +13,8 @@
           </view-wrapper>
           
           <card-body>
-            <md-input icon-left icon="envelope" class="email" v-model="email" type="email" label="Enter your email" />
-            <md-input icon-left icon="lock" class="pwd" v-model="pwd" type="password" label="Enter your password" />
+            <input icon-left icon="envelope" class="email" v-model="email" type="email" label="Enter your email" />
+            <input icon-left icon="lock" class="pwd" v-model="pwd" type="password" label="Enter your password" />
             
             <card-title>
               <btn @click.native="login" icon-left icon="sign-in" gradient="peach" rounded>
@@ -103,7 +103,7 @@
         
         console.log(credentials);
         
-        // this.$store.dispatch('login', credentials);
+        this.$store.dispatch('login', credentials);
       }
     }
   };
