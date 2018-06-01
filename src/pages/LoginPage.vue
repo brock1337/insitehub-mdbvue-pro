@@ -13,8 +13,8 @@
           </view-wrapper>
           
           <card-body>
-            <input icon-left icon="envelope" class="email" v-model="email" type="email" label="Enter your email" />
-            <input icon-left icon="lock" class="pwd" v-model="pwd" type="password" label="Enter your password" />
+            <input v-model="email" type="email" label="Enter your email" icon-left icon="envelope" />
+            <input v-model="pwd" type="password" label="Enter your password" icon-left icon="lock" />
             
             <card-title>
               <btn @click.native="login" icon-left icon="sign-in" gradient="peach" rounded>

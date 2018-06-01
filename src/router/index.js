@@ -2,8 +2,10 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 // Custom Pages
+import AppDashboard from '../pages/AppDashboard';
 import SignupPage from '../pages/SignupPage';
 import LoginPage from '../pages/LoginPage';
+import GameCategories from '../pages/GameCategories';
 
 // PAGES
 import CSSPage from '../docs/CSSPage';
@@ -11,7 +13,7 @@ import ComponentsPage from '../docs/ComponentsPage';
 import AdvancedPage from '../docs/AdvancedPage';
 
 // FREE
-import HomePage from '../docs/HomePage';
+//import HomePage from '../docs/HomePage';
 import GridPage from '../docs/GridPage';
 import BadgePage from '../docs/BadgePage';
 import CardPage from '../docs/CardPage';
@@ -70,7 +72,7 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: HomePage
+      component: AppDashboard
     },
     // CUSTOM PAGES
     {
@@ -83,6 +85,12 @@ export default new Router({
       name: 'Login',
       component: LoginPage
     },
+    {
+      path: '/game',
+      name: 'Game',
+      component: GameCategories
+    },
+    
     // PAGES
     {
       path: '/css',

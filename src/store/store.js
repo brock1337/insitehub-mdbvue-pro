@@ -46,14 +46,11 @@ export const store = new Vuex.Store({
         password: payload.pwd
       })
         .then(res => {
-          console.log('[Vuex] actions: login', res.data);
-        
           // commit('authUser', {
           //   idToken: res.data.idToken,
           //   refreshToken: res.data.refreshToken,
           //   user: res.data
           // });
-        
         })
         .catch(error => {
           console.error('[ERROR]: login', error);
@@ -62,7 +59,7 @@ export const store = new Vuex.Store({
     },
     anonLogin: ({ commit }, payload) => {
       console.log('[Vuex] actions: anonLogin');
-    
+  
       axios.post(FIREBASE_API_LOGIN_ANON, {
         returnSecureToken: true
       })
