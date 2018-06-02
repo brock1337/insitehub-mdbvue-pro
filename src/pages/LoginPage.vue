@@ -96,14 +96,21 @@
     },
     methods: {
       login () {
-        const credentials = {
+        let credentials = {
           email: this.email,
           pwd: this.pwd
         };
         
-        console.log(credentials);
+        if (!credentials.email || !credentials.pwd) {
+          console.info('Form is missing required input(s).  Please double check.', credentials);
+          //throw new Error('Form is missing required input(s).  Please double check.');
+        }
         
-        this.$store.dispatch('login', credentials);
+        this.$store.dispatch('login', credentials)
+          .then(() => {
+            console.log('[Vuex actions]: login -> DONE');
+            this.$router.push('/');
+          });
       }
     }
   };

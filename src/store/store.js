@@ -26,14 +26,11 @@ export const store = new Vuex.Store({
         password: payload.pwd
       })
         .then(res => {
-          console.log('[Vuex] actions: signup', res);
-        
-          // commit('authUser', {
-          //   idToken: res.data.idToken,
-          //   refreshToken: res.data.refreshToken,
-          //   user: res.data
-          // });
-        
+          commit('authenticateUser', {
+            idToken: res.data.idToken,
+            refreshToken: res.data.refreshToken,
+            user: res.data
+          });
         })
         .catch(error => {
           console.error('[ERROR]: signup', error);
@@ -46,11 +43,11 @@ export const store = new Vuex.Store({
         password: payload.pwd
       })
         .then(res => {
-          // commit('authUser', {
-          //   idToken: res.data.idToken,
-          //   refreshToken: res.data.refreshToken,
-          //   user: res.data
-          // });
+          commit('authenticateUser', {
+            idToken: res.data.idToken,
+            refreshToken: res.data.refreshToken,
+            user: res.data
+          });
         })
         .catch(error => {
           console.error('[ERROR]: login', error);
@@ -58,19 +55,17 @@ export const store = new Vuex.Store({
         });
     },
     anonLogin: ({ commit }, payload) => {
-      console.log('[Vuex] actions: anonLogin');
-  
       axios.post(FIREBASE_API_LOGIN_ANON, {
         returnSecureToken: true
       })
         .then(res => {
           console.log('[anonLogin] - Response', res);
-        
-          // commit('authUser', {
-          //   idToken: res.data.idToken,
-          //   refreshToken: res.data.refreshToken,
-          //   user: res.data
-          // });
+
+          commit('authenticateUser', {
+            idToken: res.data.idToken,
+            refreshToken: res.data.refreshToken,
+            user: res.data
+          });
         })
         .catch(error => {
           console.error('[ERROR]: Anon Login', error);
@@ -82,7 +77,7 @@ export const store = new Vuex.Store({
         .then(() => {
           console.log('**** Logout Successful');
         
-          commit('authUser', {
+          commit('authenticateUser', {
             idToken: null,
             refreshToken: null,
             user: null
@@ -95,6 +90,10 @@ export const store = new Vuex.Store({
     }
   },
   mutations: {
-  
+    authenticateUser: (state, payload) => {
+      state.idToken = payload.idToken;
+      state.refreshToken = payload.refreshToken;
+      state.user = payload.user;
+    }
   }
 });

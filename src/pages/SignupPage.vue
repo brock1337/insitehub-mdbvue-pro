@@ -102,9 +102,16 @@
           pwd: this.pwd
         };
         
-        console.log(credentials);
+        if (!credentials.email || !credentials.pwd) {
+          console.info('Form is missing required input(s).  Please double check.', credentials);
+          //throw new Error('Form is missing required input(s).  Please double check.');
+        }
         
-        this.$store.dispatch('signup', credentials);
+        this.$store.dispatch('signup', credentials)
+          .then(() => {
+            console.log('[Vuex actions]: signup -> DONE');
+            this.$router.push('/');
+          });
       }
     }
   };

@@ -3,7 +3,7 @@
     
     <row>
       <column>
-        <btn @click.native="startNewGame" color="secondary" rounded>
+        <btn @click.native="createGame" color="secondary" rounded>
           Start Game
         </btn>
       </column>
@@ -11,7 +11,7 @@
   
     <row>
       <column>
-        <btn @click.native="startNewChallenge" rounded>
+        <btn @click.native="createChallenge" rounded>
           New Challenge
         </btn>
       </column>
@@ -35,15 +35,16 @@
       Row
     },
     methods: {
-      startNewGame () {
-        console.log('New Game');
+      createGame () {
+        console.log('Creating new Game...');
         
         // TODO: Determine what data must be acquired & saved prior to navigating to choose category
+        // TODO: Can this data persistence wait till a later step and be populated from Vuex?
         
-        //this.$router.push({ path: '/' });
+        this.$router.push({ path: '/game' });
       },
-      startNewChallenge () {
-        console.log('New Challenge');
+      createChallenge () {
+        console.log('Creating new Challenge...');
   
         // TODO: Determine what data must be acquired & saved prior to navigating to choose opponent
         
