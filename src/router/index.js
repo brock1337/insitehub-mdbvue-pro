@@ -6,6 +6,9 @@ import AppDashboard from '../pages/AppDashboard';
 import SignupPage from '../pages/SignupPage';
 import LoginPage from '../pages/LoginPage';
 import GameCategories from '../pages/GameCategories';
+import ResourceLibrary from '../pages/ResourceLibrary';
+//import ResourceList from '../pages/ResourceList';
+//import ResourceItem from '../pages/ResourceItem';
 
 // PAGES
 import CSSPage from '../docs/CSSPage';
@@ -67,7 +70,7 @@ import StickyPage from '../docs/pro/StickyPage';
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',
@@ -89,6 +92,11 @@ export default new Router({
       path: '/game',
       name: 'Game',
       component: GameCategories
+    },
+    {
+      path: '/library',
+      name: 'Library',
+      component: ResourceLibrary
     },
     
     // PAGES

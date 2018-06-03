@@ -101,7 +101,11 @@ import MiniChart from './components/pro/MiniChart';
 import Scrollbar from './components/pro/Scrollbar';
 import Sticky from './directives/Sticky';
 
+// Custom Components
+import TabNavbar from './pages/TabNavbar';
+
 export {
+  TabNavbar,
   // FREE
   Badge,
   Breadcrumb,
@@ -176,7 +180,7 @@ export {
   ModalFooter,
   waves,
 
-  // PRO 
+  // PRO
   Accordion,
   BtnFixed,
   BtnFixedItem,
