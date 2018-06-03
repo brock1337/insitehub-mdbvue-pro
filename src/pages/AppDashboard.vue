@@ -41,7 +41,7 @@
         // TODO: Determine what data must be acquired & saved prior to navigating to choose category
         // TODO: Can this data persistence wait till a later step and be populated from Vuex?
         
-        this.$router.push({ path: '/game' });
+        this.$router.push({ path: '/game/channels' });
       },
       createChallenge () {
         console.log('Creating new Challenge...');

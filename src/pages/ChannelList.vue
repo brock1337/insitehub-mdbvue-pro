@@ -14,10 +14,10 @@
           </view-wrapper>
           
           <!-- Floating Action Button (FAB) -->
-          <btn @click.native="selectCategory('Machine Learning', $event)" tag="a" floating action class="ml-auto mr-4 mdb-color lighten-3">
+          <btn @click.native="selectChannel(channel.id, $event)" tag="a" floating action class="ml-auto mr-4 mdb-color lighten-3">
             <fa icon="chevron-right" class="pl-1" />
           </btn>
-  
+          
           <!-- Body -->
           <card-body>
             <card-title>
@@ -66,7 +66,7 @@
   import ViewWrapper from '../components/ViewWrapper';
   
   export default {
-    name: 'GameCategories',
+    name: 'ChannelList',
     components: {
       Btn,
       Card,
@@ -113,8 +113,13 @@
       };
     },
     methods: {
-      selectCategory (category, event) {
-        console.log('Selected Category: ', category);
+      selectChannel (category, event) {
+        console.log('Selected Channel ID: ', category);
+        
+        this.$router.push({
+          path: '/question/',
+          params: category.id
+        });
       }
     }
   };

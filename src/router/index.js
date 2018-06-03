@@ -6,10 +6,11 @@ import Router from 'vue-router';
 import AppDashboard from '../pages/AppDashboard';
 import SignupPage from '../pages/SignupPage';
 import LoginPage from '../pages/LoginPage';
-import GameCategories from '../pages/GameCategories';
+import ChannelList from '../pages/ChannelList';
 import ResourceLibrary from '../pages/ResourceLibrary';
 //import ResourceList from '../pages/ResourceList';
 //import ResourceItem from '../pages/ResourceItem';
+import QuestionPage from '../pages/QuestionPage';
 
 // PAGES
 import CSSPage from '../docs/CSSPage';
@@ -101,14 +102,19 @@ export default new Router({
       component: LoginPage
     },
     {
-      path: '/game',
-      name: 'Game',
-      component: GameCategories
+      path: '/game/channels',
+      name: 'Channel',
+      component: ChannelList
     },
     {
       path: '/library',
       name: 'Library',
       component: ResourceLibrary
+    },
+    {
+      path: '/question/:id',
+      name: 'Question',
+      component: QuestionPage
     },
     
     // PAGES
