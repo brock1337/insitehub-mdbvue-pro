@@ -14,9 +14,14 @@ export const store = new Vuex.Store({
     user: null
   },
   getters: {
-    authenticated (state) {
-      console.log('[Vuex] getters: authenticated');
-      return state.idToken !== null;
+    isAuthenticated (state) {
+      console.log('[Vuex Getters] - isAuthenticated: ', state.idToken);
+      
+      if (state.idToken) {
+        return true;
+      }
+      
+      return false;
     }
   },
   actions: {

@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+// import { store } from '../store/store';
 
 // Custom Pages
 import AppDashboard from '../pages/AppDashboard';
@@ -70,12 +71,23 @@ import StickyPage from '../docs/pro/StickyPage';
 Vue.use(Router);
 
 export default new Router({
-  // mode: 'history',
+  mode: 'history',
   routes: [
     {
       path: '/',
       name: 'Home',
-      component: AppDashboard
+      component: AppDashboard,
+      // beforeEnter (to, from, next) {
+      //   if (store.getters.isAuthenticated) {
+      //     console.log('[ROUTER GUARD] beforeEnter -> AppDashboard: Valid idToken. ', store.getters.idToken);
+      //     console.log('[FROM]: ', from);
+      //     console.log('[TO]: ', to);
+      //     return next();
+      //   }
+      //
+      //   console.log('[ROUTER GUARD] beforeEnter -> AppDashboard: Bad idToken. ', store.getters.idToken);
+      //   next('/login');
+      // }
     },
     // CUSTOM PAGES
     {
