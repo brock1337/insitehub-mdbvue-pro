@@ -113,13 +113,12 @@
       };
     },
     methods: {
-      selectChannel (category, event) {
-        console.log('Selected Channel ID: ', category);
+      selectChannel (channel, event) {
+        console.log('Selected Channel ID: ', channel);
         
-        this.$router.push({
-          path: '/question/',
-          params: category.id
-        });
+        this.$emit('getQuestionsForChannel', channel);
+        
+        this.$router.push({ path: '/question/1' });
       }
     }
   };
