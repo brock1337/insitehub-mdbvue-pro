@@ -9,6 +9,8 @@ import RavenVue from 'raven-js/plugins/vue';
 import firebase from 'firebase';
 import { FIREBASE_CONFIG } from "../constants";
 
+require('firebase/firestore');
+
 import 'bootstrap/dist/css/bootstrap.css';
 import '../build/css/mdb.css';
 
@@ -21,6 +23,44 @@ Raven.config('https://78a69bdd49b24469b328c09c291a93e1@sentry.io/1217364')
 
 // Initialize Firebase
 firebase.initializeApp(FIREBASE_CONFIG);
+const db = firebase.firestore();
+
+// Add data to Firestore
+// db.collection('channels').add({
+//   id: 1,
+//   name: 'Management',
+//   description: 'The big wigs.'
+// })
+//   .then(docRef => {
+//     console.log('Document written with ID: ', docRef.id);
+//   })
+//   .catch(err => {
+//     console.error('[ERROR]: collection add ', err);
+//   });
+
+// Adding second set
+// db.collection('channels').add({
+//   id: 2,
+//   name: 'Marketing',
+//   description: 'The vision people.'
+// })
+//   .then(docRef => {
+//     console.log('Document written with ID: ', docRef.id);
+//   })
+//   .catch(err => {
+//     console.error('[ERROR]: collection add ', err);
+//   });
+
+// Read data from Firestore
+db.collection('channels').get()
+  .then(querySnapshot => {
+    querySnapshot.forEach(doc => {
+      console.log(`${doc.id} => ${doc.data()}`);
+    });
+  })
+  .catch(err => {
+    console.error('[ERROR]: collection get ', err);
+  });
 
 // Initialize Firebase Cloud Messaging
 const messaging = firebase.messaging();

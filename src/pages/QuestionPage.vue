@@ -2,43 +2,96 @@
   <container>
     <row>
       <column>
-        
-        <card>
+        <card wide>
           <view-wrapper hover>
-            <card-img src="https://mdbootstrap.com/img/Photos/Others/food.jpg" alt="Card image cap"></card-img>
+            <card-img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20%283%29.jpg" alt="Card image cap"></card-img>
             <md-mask flex-center waves overlay="white-slight"></md-mask>
           </view-wrapper>
           
-          <btn tag="a" floating action class="ml-auto mr-4 mdb-color lighten-3"><fa icon="book" class="pl-1" /></btn>
-          
-          <card-body>
+          <card-body class="text-center">
             <card-title>
-              We could put the question here leaving above for some resource
+              <strong>What do you know?</strong>
             </card-title>
-            <hr/>
             
+            <card-text class="indigo-text">
+              Maybe this is the question text instead? ... It could also serve as a hint placeholder.
+            </card-text>
+  
             <ul class="list-unstyled list-inline font-small mt-3">
-              <li class="list-inline-item pr-2"><fa icon="clock-o" class="pr-1" />05/10/2015</li>
+              <li class="list-inline-item pr-2">
+                <a href="#">
+                  <fa icon="plus" class="pr-1" />
+                  Option A
+                </a>
+              </li>
               <hr />
-              <li class="list-inline-item pr-2"><a href="#"><fa icon="comments-o" class="pr-1" />12</a></li>
+              
+              <li class="list-inline-item pr-2">
+                <a href="#">
+                  <fa icon="plus" class="pr-1" />
+                  Option B
+                </a>
+              </li>
               <hr />
-              <li class="list-inline-item pr-2"><a href="#"><fa icon="facebook" class="pr-1" />21</a></li>
+              
+              <li class="list-inline-item pr-2">
+                <a href="#">
+                  <fa icon="plus" class="pr-1" />
+                  Option C
+                </a>
+              </li>
               <hr />
-              <li class="list-inline-item"><a href="#"><fa icon="twitter" class="pr-1" />5</a></li>
+              
+              <li class="list-inline-item pr-2">
+                <a href="#">
+                  <fa icon="plus" class="pr-1" />
+                  Option D
+                </a>
+              </li>
             </ul>
-          </card-body>
           
-          <card-footer color="mdb-color" class="lighten-3 p-0 text-center">
-            <ul class="list-unstyled list-inline font-small mt-3">
-              <li class="list-inline-item pr-2 white-text"><fa icon="clock-o" class="pr-1" />05/10/2015</li>
-              <li class="list-inline-item pr-2"><a href="#" class="white-text"><fa icon="comments-o" class="pr-1" />12</a></li>
-              <li class="list-inline-item pr-2"><a href="#" class="white-text"><fa icon="facebook" class="pr-1" />21</a></li>
-              <li class="list-inline-item"><a href="#" class="white-text"><fa icon="twitter" class="pr-1" />5</a></li>
-            </ul>
-          </card-footer>
+          </card-body>
         </card>
-        
       </column>
+  
+      <!--<column>-->
+        <!---->
+        <!--<card>-->
+          <!--<view-wrapper hover>-->
+            <!--<card-img src="https://mdbootstrap.com/img/Photos/Others/food.jpg" alt="Card image cap"></card-img>-->
+            <!--<md-mask flex-center waves overlay="white-slight"></md-mask>-->
+          <!--</view-wrapper>-->
+          <!---->
+          <!--<btn tag="a" floating action class="ml-auto mr-4 mdb-color lighten-3"><fa icon="book" class="pl-1" /></btn>-->
+          <!---->
+          <!--<card-body>-->
+            <!--<card-title>-->
+              <!--We could put the question here leaving above for some resource-->
+            <!--</card-title>-->
+            <!--<hr/>-->
+            <!---->
+            <!--<ul class="list-unstyled list-inline font-small mt-3">-->
+              <!--<li class="list-inline-item pr-2"><fa icon="clock-o" class="pr-1" />05/10/2015</li>-->
+              <!--<hr />-->
+              <!--<li class="list-inline-item pr-2"><a href="#"><fa icon="comments-o" class="pr-1" />12</a></li>-->
+              <!--<hr />-->
+              <!--<li class="list-inline-item pr-2"><a href="#"><fa icon="facebook" class="pr-1" />21</a></li>-->
+              <!--<hr />-->
+              <!--<li class="list-inline-item"><a href="#"><fa icon="twitter" class="pr-1" />5</a></li>-->
+            <!--</ul>-->
+          <!--</card-body>-->
+          <!---->
+          <!--<card-footer color="mdb-color" class="lighten-3 p-0 text-center">-->
+            <!--<ul class="list-unstyled list-inline font-small mt-3">-->
+              <!--<li class="list-inline-item pr-2 white-text"><fa icon="clock-o" class="pr-1" />05/10/2015</li>-->
+              <!--<li class="list-inline-item pr-2"><a href="#" class="white-text"><fa icon="comments-o" class="pr-1" />12</a></li>-->
+              <!--<li class="list-inline-item pr-2"><a href="#" class="white-text"><fa icon="facebook" class="pr-1" />21</a></li>-->
+              <!--<li class="list-inline-item"><a href="#" class="white-text"><fa icon="twitter" class="pr-1" />5</a></li>-->
+            <!--</ul>-->
+          <!--</card-footer>-->
+        <!--</card>-->
+        <!---->
+      <!--</column>-->
     </row>
   </container>
 </template>
